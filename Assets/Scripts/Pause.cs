@@ -12,8 +12,21 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = !isPaused;
-            Time.timeScale = isPaused ? 0 : 1;
-            uiCanvas.gameObject.SetActive(isPaused);
+            UpdateState();
         }
+    }
+
+    public void MainMenu() => UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+
+    public void Resume()
+    {
+        isPaused = false;
+        UpdateState();
+    }
+
+    private void UpdateState()
+    {
+        Time.timeScale = isPaused ? 0 : 1;
+        uiCanvas.gameObject.SetActive(isPaused);
     }
 }
