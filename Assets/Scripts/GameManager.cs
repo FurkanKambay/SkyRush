@@ -21,6 +21,13 @@ namespace Aircraft
         Hard
     }
 
+    public enum Level
+    {
+        MainMenu,
+        Desert,
+        Forest
+    }
+
     public delegate void OnStateChangeHandler();
 
     public class GameManager : MonoBehaviour
@@ -32,8 +39,11 @@ namespace Aircraft
 
         private GameState gameState;
 
+        private Level currentLevel = Level.MainMenu;
+        public Level CurrentLevel => currentLevel;
+
         /// <summary>
-        /// The current game state 
+        /// The current game state
         /// </summary>
         public GameState GameState
         {
@@ -84,20 +94,20 @@ namespace Aircraft
         /// <summary>
         /// Loads a new level and sets the game state
         /// </summary>
-        /// <param name="levelName">The level to load</param>
+        /// <param name="level">The level to load</param>
         /// <param name="newState">The new game state</param>
-        public void LoadLevel(string levelName, GameState newState)
+        public void LoadLevel(Level level, GameState newState)
         {
-            StartCoroutine(LoadLevelAsync(levelName, newState));
+            StartCoroutine(LoadLevelAsync(level, newState));
         }
 
-        private IEnumerator LoadLevelAsync(string levelName, GameState newState)
+        private IEnumerator LoadLevelAsync(Level level, GameState newState)
         {
             // Load the new level
-            AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
+            AsyncOperation operation = SceneManager.LoadSceneAsync((int)level);
             while (operation.isDone == false)
             { yield return null; }
-        
+            currentLevel = level;
 
         // Set the resolution
         Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);

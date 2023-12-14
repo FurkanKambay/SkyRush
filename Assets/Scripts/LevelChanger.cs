@@ -1,24 +1,25 @@
 using UnityEngine;
 
-public class LevelChanger : MonoBehaviour
+namespace Aircraft
 {
-    static int currentLevel = 1;
-
-    void Update()
+    public class LevelChanger : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            SwitchTo(1);
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwitchTo(2);
-        else if (Input.GetKeyDown(KeyCode.Alpha0))
-            SwitchTo(0);
-    }
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+                SwitchTo(Level.Desert);
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+                SwitchTo(Level.Forest);
+            else if (Input.GetKeyDown(KeyCode.Alpha0))
+                SwitchTo(Level.MainMenu);
+        }
 
-    void SwitchTo(int index)
-    {
-        if (currentLevel == index) return;
+        void SwitchTo(Level level)
+        {
+            if (GameManager.Instance.CurrentLevel == level)
+                return;
 
-        currentLevel = index;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(index);
+            GameManager.Instance.LoadLevel(level, GameState.Preparing);
+        }
     }
 }

@@ -54,7 +54,13 @@ namespace Aircraft
             GameManager.Instance.GameDifficulty = selectedDifficulty;
 
             // Load the level in 'Preparing' mode
-            GameManager.Instance.LoadLevel(selectedLevel, GameState.Preparing);
+            Level level = selectedLevel switch
+            {
+                "Forest" => Level.Forest,
+                "Desert" => Level.Desert,
+                _ => Level.Desert
+            };
+            GameManager.Instance.LoadLevel(level, GameState.Preparing);
         }
 
         public void QuitButtonClicked()
