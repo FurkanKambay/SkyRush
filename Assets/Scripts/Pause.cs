@@ -1,32 +1,37 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pause : MonoBehaviour
+namespace Aircraft
 {
-    public Canvas uiCanvas;
 
-    private bool isPaused = false;
-
-    void Update()
+    public class Pause : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        public Canvas uiCanvas;
+
+        private bool isPaused = false;
+
+        void Update()
         {
-            isPaused = !isPaused;
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                isPaused = !isPaused;
+                UpdateState();
+            }
+        }
+
+        public void MainMenu() => UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+
+        public void Resume()
+        {
+            isPaused = false;
             UpdateState();
+        }
+
+        private void UpdateState()
+        {
+            Time.timeScale = isPaused ? 0 : 1;
+            uiCanvas.gameObject.SetActive(isPaused);
         }
     }
 
-    public void MainMenu() => UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-
-    public void Resume()
-    {
-        isPaused = false;
-        UpdateState();
-    }
-
-    private void UpdateState()
-    {
-        Time.timeScale = isPaused ? 0 : 1;
-        uiCanvas.gameObject.SetActive(isPaused);
-    }
 }
