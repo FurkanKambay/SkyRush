@@ -493,8 +493,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272325277}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10076802, y: -1e-45, z: -0, w: 0.99490994}
-  m_LocalPosition: {x: 149.2, y: 3.07, z: -296.80417}
+  m_LocalRotation: {x: 0.071253754, y: 0.70350754, z: -0.07125375, w: 0.7035076}
+  m_LocalPosition: {x: -46.1, y: 13.17, z: -61.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -588,8 +588,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10076802, y: -1e-45, z: 0, w: 0.99490994}
-  m_LocalPosition: {x: 149.2, y: 3.07, z: -296.80417}
+  m_LocalRotation: {x: 0.071253754, y: 0.70350754, z: -0.07125375, w: 0.7035076}
+  m_LocalPosition: {x: -46.1, y: 13.17, z: -61.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -853,6 +853,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &436576146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436576148}
+  - component: {fileID: 436576147}
+  m_Layer: 0
+  m_Name: RaceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &436576147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436576146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19660de0292dc734f8d1c95d777fe51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numLaps: 2
+  checkpointBonusTime: 15
+  difficultyModels:
+  - difficulty: 1
+    model: {fileID: 5022602860645237092, guid: 40c4f8afe0bbde749bdbc05d7247c077, type: 3}
+--- !u!4 &436576148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436576146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 323.44193, y: 185.43785, z: 413.36176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &510977062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,17 +1605,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4771119163685457695, guid: 2c5094294a34fbd4ba594391373921d9, type: 3}
-      propertyPath: trainingMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8512441049007561882, guid: 2c5094294a34fbd4ba594391373921d9, type: 3}
       propertyPath: m_Name
       value: DesertArea
       objectReference: {fileID: 0}
     - target: {fileID: 8588168806142892678, guid: 2c5094294a34fbd4ba594391373921d9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1575,7 +1620,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 2c5094294a34fbd4ba594391373921d9, type: 3}
 --- !u!4 &6347917712063308855 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6860436702857712290, guid: 2c5094294a34fbd4ba594391373921d9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8963463613160128572, guid: 2c5094294a34fbd4ba594391373921d9, type: 3}
   m_PrefabInstance: {fileID: 6347917712063308854}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
@@ -1589,3 +1634,4 @@ SceneRoots:
   - {fileID: 1457082701}
   - {fileID: 376862607}
   - {fileID: 112945211}
+  - {fileID: 436576148}
