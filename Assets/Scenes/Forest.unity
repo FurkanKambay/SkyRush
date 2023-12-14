@@ -1473,6 +1473,7 @@ GameObject:
   - component: {fileID: 1457082701}
   - component: {fileID: 1457082702}
   - component: {fileID: 1457082703}
+  - component: {fileID: 1457082704}
   m_Layer: 0
   m_Name: game manager
   m_TagString: Untagged
@@ -1523,6 +1524,18 @@ MonoBehaviour:
   agent: {fileID: 1873479870}
   player: {fileID: 1477689319}
   virtualCamera: {fileID: 272325278}
+--- !u!114 &1457082704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457082700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ea11d7b2a3c934ab2f77a1c30e3911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1477689319 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1671376690401171251, guid: 47b1885d9ba985d45bd0d57794a78520, type: 3}
