@@ -19,7 +19,11 @@ namespace Aircraft
             }
         }
 
-        public void MainMenu() => UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        public void MainMenu()
+        {
+            Time.timeScale = 1;
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
 
         public void Resume()
         {
