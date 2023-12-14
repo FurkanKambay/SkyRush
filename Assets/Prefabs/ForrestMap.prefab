@@ -319,6 +319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4474044702007546975}
+  - component: {fileID: 1647905390907318180}
   m_Layer: 0
   m_Name: ForrestMap
   m_TagString: Untagged
@@ -344,6 +345,22 @@ Transform:
   - {fileID: 5835857032776132384}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1647905390907318180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706072975275232791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd320932484e5ff45ad7ae6b2d70dca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  racePath: {fileID: 7609830486722093027}
+  checkpointPrefab: {fileID: 1187221882605838991, guid: c394e88d25e1a1d428cda355dab59fd3, type: 3}
+  finishCheckpointPrefab: {fileID: 6853791088208931352, guid: fb7f37fa3e5665c4186e61e2f553c890, type: 3}
+  trainingMode: 1
 --- !u!1 &5464258552267759761
 GameObject:
   m_ObjectHideFlags: 0
