@@ -54,6 +54,8 @@
 *.terrainlayer              unity-yaml
 *.unity                     unity-yaml
 
+*Terrain.asset              lfs
+
 # Hide settings and plugins from GitHub stats and diffs
 Assets/Plugins/**           linguist-generated
 Packages/packages-lock.json linguist-generated
